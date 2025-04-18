@@ -22,14 +22,7 @@ class DemoPage extends Page
         return [
             FilterAction::make()
                 ->form([
-
                     DateRangePicker::make('period')
-                        ->required()
-                        ->defaultCustom(
-                            Carbon::createFromFormat('Y-m-d', Session::get('dashboard.start-date') ?? now()->format('Y-m-d')),
-                            Carbon::createFromFormat('Y-m-d', Session::get('dashboard.end-date') ?? now()->format('Y-m-d'))
-                        )
-                        ->label('Período'),
                 ])
         ];
     }
